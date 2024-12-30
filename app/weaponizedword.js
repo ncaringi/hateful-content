@@ -5,7 +5,7 @@ const fs = require('fs');
 const apiConnection = async () => {
    try {
       const body = new formData();
-      body.append('api_key', 'FVL8WhNTjuTHyBGabJUdiKCNmdVqRYLJ');
+      body.append('api_key', process.env.API_KEY_WEAPONIZEDWORD);
       const response = await axios.post('https://api.weaponizedword.org/lexicons/1-0/authenticate', body);
       const token = response.data.result.token;
       console.log('Token récupéré');
